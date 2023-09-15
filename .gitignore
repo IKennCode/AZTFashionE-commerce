@@ -1,3 +1,0 @@
-*.tmp         # Ignore all files with a .tmp extension
-node_modules/ # Ignore the node_modules directory
-
