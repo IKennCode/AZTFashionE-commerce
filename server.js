@@ -12,6 +12,7 @@ app.get("/", (req, res) => {
 });
 
 // declare PORT
+//this will create a localhost:8080 that will load a message from app.get
 const PORT = 8080;
 
 //run Listen
