@@ -9,17 +9,17 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoute.js"
 
 //configure env
-dotenv.config()
+dotenv.config();
 
-//database config
+//database config(configuration)
 connectDB();
 
 //rest object
 const app = express();
 
 //middlewares
-app.use(express.json())
-app.use(morgan('dev'))
+app.use(express.json());
+app.use(morgan('dev'));
 
 //routes
 app.use("/api/v1/auth", authRoutes);
