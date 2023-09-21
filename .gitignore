@@ -1,2 +1,4 @@
 # created '.gitignore" to ignore some files or bunch of files of libraries like node_modules so that we can upload it to github.
 node_modules
+MONGO_URL
+JWT_SECRET
