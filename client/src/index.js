@@ -4,11 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//imported "react-router-dom" for single-page website
+import {BrowserRouter} from 'react-router-dom';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <BrowserRouter>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+  </BrowserRouter>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
