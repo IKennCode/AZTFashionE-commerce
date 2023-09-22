@@ -10,19 +10,19 @@ export const registerController = async (req, res) => {
 
         //validations
         if(!name){
-            return res.send({error:"Name is required"})
+            return res.send({message:"Name is required"})
         }
         if(!email){
-            return res.send({error:"Email is required"})
+            return res.send({message:"Email is required"})
         }
         if(!password){
-            return res.send({error:"Password is required"})
+            return res.send({message:"Password is required"})
         }
         if(!phone){
-            return res.send({error:"Phone is required"})
+            return res.send({message:"Phone is required"})
         }
         if(!address){
-            return res.send({error:"Address is required"})
+            return res.send({message:"Address is required"})
         }
 
         //check user if already stored in database
@@ -30,7 +30,7 @@ export const registerController = async (req, res) => {
         //if there is existing user
         if(existingUser){
             return res.status(200).send({
-                success:true,
+                success:false,
                 message:"Already Register please login",
             })
         }
@@ -43,7 +43,7 @@ export const registerController = async (req, res) => {
         // const user = new userModel({name, email, phone, address, password:hashedPassword}).save()
         const user = await new userModel({name, email, phone, address, password:hashedPassword}).save()
 
-        //this one will appear on postman post request
+        //this one will appear on postman post request or in local storage or MONGODB
         res.status(201).send({
             success: true,
             message: "User Register Successfully!",
