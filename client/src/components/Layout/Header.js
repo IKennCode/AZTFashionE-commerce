@@ -1,8 +1,18 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import {GiShoppingCart} from 'react-icons/gi'
+import { useAuth } from '../../context/auth'
+import toast from 'react-hot-toast'
 
 const Header = () => {
+  const [auth, setAuth] = useAuth();
+  const handleLogout = () => {
+    setAuth({
+      ...auth, user:null, token: ''
+    })
+    localStorage.removeItem('auth')
+    toast.success("Logout Successfully")
+  }
   return (
     <>
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -20,19 +30,21 @@ const Header = () => {
         <li className="nav-item">
           <NavLink to="/category" className="nav-link" href="#">Category</NavLink>
         </li>
-        
-        
+
+        {
+          !auth.user ? 
+          (<><NavLink to="/register" className=" btn-outline-dark nav-link" href="#">Register</NavLink><NavLink to="/login" className="nav-link" href="#">Login</NavLink></>)
+          
+          : (<><NavLink onClick={handleLogout} to="/login" className="nav-link" href="#">Logout</NavLink></>)
+        }
+
+    
       </ul>
       <form className="d-flex" role="search">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
         <button className="btn btn-outline-success" type="submit">Search</button>
       </form>
-      
-        <NavLink to="/register" className="btn btn-outline-success" type="submit">Register</NavLink>
-      
-      
-        <NavLink to="/login" className="btn btn-outline-success" type="submit">Login</NavLink>
-      
+
       <li className="d-flex m-4">
       <NavLink to="/cart" className="btn btn-outline-secondary" href="#">Cart(0)</NavLink>
     </li>
@@ -44,4 +56,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;
