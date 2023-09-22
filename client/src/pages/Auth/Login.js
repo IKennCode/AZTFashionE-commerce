@@ -9,7 +9,7 @@ import { useAuth } from '../../context/auth'
 
 const Login = () => {
     
-    const [email, setEmail] = useState(" ")
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [auth, setAuth] = useAuth();
     
@@ -26,10 +26,10 @@ const Login = () => {
                 setAuth ({
                     ...auth,
                     user: res.data.user,
-                    token: res.data.token,
+                    token: res.data.token
                 });
                 localStorage.setItem("auth", JSON.stringify(res.data)); 
-                navigate("/");
+                navigate("/home");
             }else {
                 toast.error(res.data.message)
             }
@@ -43,14 +43,14 @@ const Login = () => {
   return (
     <Layout title="Login Ecommerce">
         <div className='login'>
-            <h1>register page</h1>
+            <h1>Login Here</h1>
             <form onSubmit={handleSubmit}>
                 
                 <div className="mb-3">
-                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" id="exampleInputEmail1" placeholder='Enter Your Email' required />
+                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="form-control"  placeholder='Enter Your Email' required />
                 </div>
                 <div className="mb-3">
-                    <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" id="exampleInputEmail1" placeholder='Enter Your Password' required />
+                    <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control"  placeholder='Enter Your Password' required />
                 </div>
                 
             <button type="submit" className="btn btn-primary">Login</button>

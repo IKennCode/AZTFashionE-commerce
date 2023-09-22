@@ -9,11 +9,12 @@ import Register from "./pages/Auth/Register";
 import Login from "./pages/Auth/Login";
 
 
+
 function App() {
   return (
     < >
       <Routes>
-      <Route path="/" element={<Home/>} />
+      <Route path="/home" element={<Home/>} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/about" element={<About/>} />
@@ -21,10 +22,9 @@ function App() {
       <Route path="/*" element={< Pagenotfound/>} />
       <Route path="/policy" element={<Policy/>} />
       </Routes>
-      
-      
     </>
   );
+  
 }
 
 export default App;
