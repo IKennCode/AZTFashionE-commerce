@@ -7,6 +7,7 @@ import Policy from "./pages/Policy"
 import Pagenotfound from "./pages/Pagenotfound"
 import Register from "./pages/Auth/Register";
 import Login from "./pages/Auth/Login";
+import ForgotPassword from "./pages/Auth/ForgotPassword";
 
 
 
@@ -18,6 +19,7 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/about" element={<About/>} />
+      <Route path="/forgotpassword" element={<ForgotPassword/>} />
       <Route path="/contact" element={<Contact/>} />
       <Route path="/*" element={< Pagenotfound/>} />
       <Route path="/policy" element={<Policy/>} />

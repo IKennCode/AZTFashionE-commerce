@@ -10,6 +10,7 @@ const Register = () => {
     const [password, setPassword] = useState("")
     const [phone, setPhone] = useState("")
     const [address, setAddress] = useState("")
+    const [answer, setAnswer] = useState("")
     const navigate = useNavigate()
 
     //form function to submit
@@ -50,6 +51,9 @@ const Register = () => {
                 </div>
                 <div className="mb-3">
                     <input value={address} onChange={(e) => setAddress(e.target.value)} type="address" className="form-control" id="exampleInputaddress1" placeholder='Enter Your Address' required />
+                </div>
+                <div className="mb-3">
+                    <input value={answer} onChange={(e) => setAnswer(e.target.value)} type="address" className="form-control" id="exampleInputaddress1" placeholder='Favorite Sports' required />
                 </div>
             
             <button type="submit" className="btn btn-primary">Submit</button>

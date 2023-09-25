@@ -52,7 +52,11 @@ const Login = () => {
                 <div className="mb-3">
                     <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control"  placeholder='Enter Your Password' required />
                 </div>
-                
+            
+            <div className='mb-3'>
+                <button type="button" className="" onClick={() => {navigate("/forgot-password");}}>Forgot Password?</button> 
+            </div>
+
             <button type="submit" className="btn btn-primary">Login</button>
             </form>
         </div>  
