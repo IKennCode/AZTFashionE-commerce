@@ -8,6 +8,8 @@ import Pagenotfound from "./pages/Pagenotfound"
 import Register from "./pages/Auth/Register";
 import Login from "./pages/Auth/Login";
 import ForgotPassword from "./pages/Auth/ForgotPassword";
+import Dashboard from "./pages/user/Dashboard";
+import PrivateRoute from "./components/Routes/Private";
 
 
 
@@ -16,10 +18,13 @@ function App() {
     < >
       <Routes>
       <Route path="/home" element={<Home/>} />
+      <Route path="/dashboard" element={< PrivateRoute/>}>
+          <Route path="" element={<Dashboard />} />
+      </Route>
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/about" element={<About/>} />
-      <Route path="/forgotpassword" element={<ForgotPassword/>} />
+      <Route path="/forgot-password" element={<ForgotPassword/>} />
       <Route path="/contact" element={<Contact/>} />
       <Route path="/*" element={< Pagenotfound/>} />
       <Route path="/policy" element={<Policy/>} />

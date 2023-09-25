@@ -11,13 +11,14 @@ const Register = () => {
     const [phone, setPhone] = useState("")
     const [address, setAddress] = useState("")
     const [answer, setAnswer] = useState("")
+    
     const navigate = useNavigate()
 
     //form function to submit
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('api/v1/auth/register', {name, email, password, phone, address}
+            const res = await axios.post('api/v1/auth/register', {name, email, password, phone, address, answer,}
             );
             if (res && res.data.success) {
                 toast.success(res.data && res.data.message);

@@ -28,14 +28,27 @@ const Header = () => {
         </li>
         
         <li className="nav-item">
-          <NavLink to="/category" className="nav-link" href="#">Category</NavLink>
+          <NavLink to="/category" className="nav-link">Category</NavLink>
         </li>
 
         {
           !auth.user ? 
-          (<><NavLink to="/register" className=" btn-outline-dark nav-link" href="#">Register</NavLink><NavLink to="/login" className="nav-link" href="#">Login</NavLink></>)
+          (<> <NavLink to="/register" className=" btn-outline-dark nav-link" >Register</NavLink>
+                <NavLink to="/login" className="nav-link">Login </NavLink></>)
           
-          : (<><NavLink onClick={handleLogout} to="/login" className="nav-link" href="#">Logout</NavLink></>)
+            : (<> <li className="nav-item dropdown">
+                     <NavLink className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {auth?.user?.name}
+                  </NavLink>
+            <ul className="dropdown-menu">
+              
+              <li><NavLink to="/dashboard" className="dropdown-item-dashboard" >Dashboard</NavLink ></li>
+              <li><hr className="dropdown-divider" /></li>
+              <NavLink onClick={handleLogout} to="/login" className="dropdown-item-logout">Logout</NavLink>
+            </ul>
+                </li>
+
+           </>)
         }
 
     
@@ -46,7 +59,7 @@ const Header = () => {
       </form>
 
       <li className="d-flex m-4">
-      <NavLink to="/cart" className="btn btn-outline-secondary" href="#">Cart(0)</NavLink>
+      <NavLink to="/cart" className="btn btn-outline-secondary" >Cart(0)</NavLink>
     </li>
     </div>
   </div>

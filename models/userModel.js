@@ -24,12 +24,13 @@ const userSchema = new mongoose.Schema({
         required:true,
         
     },
-    answer:{
+    
+    address:{
         type:String,
         required:true,
         
     },
-    address:{
+    answer:{
         type:String,
         required:true,
         
