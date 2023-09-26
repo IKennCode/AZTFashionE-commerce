@@ -91,7 +91,7 @@ export const loginController = async (req, res) => {
                 message:"Invalid Password"
             })
         }
-        //Token 
+        //check token for users and admin
         const token = await JWT.sign({_id: user._id}, process.env.JWT_SECRET, {
             expiresIn: "7d",
         });
@@ -103,6 +103,7 @@ export const loginController = async (req, res) => {
                 email: user.email,
                 phone: user.phone,
                 address: user.address,
+                role: user.role,
             },
             token,
         });
