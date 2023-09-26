@@ -1,6 +1,6 @@
 import express from "express";
 import {registerController, loginController, userController, forgotPasswordController} from "../controllers/authController.js";
-import { isAdmin, requireSignin } from "../middleware/authMIddleware.js";
+import { isAdmin, requireSignin } from "../middleware/authMiddleware.js";
 
 
 
