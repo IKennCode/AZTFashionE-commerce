@@ -42,27 +42,33 @@ const Login = () => {
     
 
   return (
-    <Layout title="Login Ecommerce">
-        <div className='login'>
-            <h1>Login Here</h1>
-            <form onSubmit={handleSubmit}>
+  
+    <Layout title={"Login Here E-commerce"}>
+      <div className="row login">
+        <div className="col-md-5 m-5 ">
+          <img
+            src="/image/login.jpg"
+            alt="contactus"
+            style={{ width: "100%" }}
+          />
+        </div>
+        <h1 className='registerpage'>Login Here</h1>
+        <form onSubmit={handleSubmit}>
                 
-                <div className="mb-3">
-                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="form-control"  placeholder='Enter Your Email' required />
+                 <div className="mb-3 email">
+                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="form-control w-25"  placeholder='Enter Your Email' required />
                 </div>
-                <div className="mb-3">
-                    <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control"  placeholder='Enter Your Password' required />
-                </div>
+                 <div className="mb-3">
+                     <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control w-25"  placeholder='Enter Your Password' required />
+                 </div>
             
-            <div className='mb-3'>
-                <button type="button" className="" onClick={() => {navigate("/forgot-password");}}>Forgot Password?</button> 
-            </div>
+             <div className='mb-3'>
+                 <button type="button" className="" onClick={() => {navigate("/forgot-password");}}>Forgot Password?</button> 
+             </div>
 
             <button type="submit" className="btn btn-primary">Login</button>
-            </form>
-        </div>  
-
-        
+             </form>
+      </div>
     </Layout>
   )
 }

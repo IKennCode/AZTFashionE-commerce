@@ -23,10 +23,6 @@ router.put(
   router.get("/single-category/:slug", singleCategoryController);
   
   //delete category
-  router.delete(
-    "/delete-category/:id",
-    requireSignin,
-    isAdmin,
-    deleteCategoryCOntroller
-  );
-export default router;
+  router.delete("/delete-category/:id",requireSignin,isAdmin,deleteCategoryCOntroller);
+
+  export default router;

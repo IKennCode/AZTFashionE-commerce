@@ -4,10 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {AuthProvider} from './context/auth'
+import { SearchProvider } from './context/search';
+import { CartProvider } from './context/cart';
+
 
 
 //imported "react-router-dom" for single-page website
 import {BrowserRouter} from 'react-router-dom';
+import "antd/dist/reset.css"
+
 
 
 
@@ -15,9 +20,13 @@ import {BrowserRouter} from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <AuthProvider>
-    <BrowserRouter>
-          <App />
-    </BrowserRouter>
+    <SearchProvider>
+      <CartProvider>
+        <BrowserRouter>
+                <App />
+        </BrowserRouter>
+      </CartProvider>
+    </SearchProvider>
   </AuthProvider>
 
   

@@ -30,7 +30,7 @@ const CreateCategory = () => {
     }
   };
 
-  //get all cat
+  //get all categry
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get("/api/v1/category/get-category");

@@ -27,7 +27,7 @@ const CreateProduct = () => {
       }
     } catch (error) {
       console.log(error);
-      toast.error("Something wwent wrong in getting catgeory");
+      toast.error("Something Went Wrong in getting Categeory");
     }
   };
 
@@ -53,12 +53,12 @@ const CreateProduct = () => {
       if (data?.success) {
         toast.error(data?.message);
       } else {
-        toast.success("Product Created Successfully");
+        toast.success("Product Created Successfully!");
         navigate("/dashboard/admin/products");
       }
     } catch (error) {
       console.log(error);
-      toast.error("something went wrong");
+      toast.error("Something Went Wrong");
     }
   };
 
@@ -89,12 +89,12 @@ const CreateProduct = () => {
                 ))}
               </Select>
               <div className="mb-3">
-                <label className="btn btn-outline-secondary col-md-12">
+                <label className="btn btn-outline-secondary col-md-3">
                   {photo ? photo.name : "Upload Photo"}
                   <input
                     type="file"
                     name="photo"
-                    accept="image/*"
+                    accept="jpg, png/*"
                     onChange={(e) => setPhoto(e.target.files[0])}
                     hidden
                   />
@@ -166,7 +166,7 @@ const CreateProduct = () => {
               </div>
               <div className="mb-3">
                 <button className="btn btn-primary" onClick={handleCreate}>
-                  CREATE PRODUCT
+                  CREATE PRODUCT NOw!
                 </button>
               </div>
             </div>

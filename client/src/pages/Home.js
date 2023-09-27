@@ -1,12 +1,18 @@
 
 import React, { useState, useEffect } from "react";
 import Layout from "./../components/Layout/Layout";
+import { useNavigate } from "react-router-dom";
+import { useCart } from "../context/cart";
+import toast from "react-hot-toast";
 
 import axios from "axios";
 import { Checkbox, Radio } from "antd";
 import { Prices } from "../components/Prices";
 const Home = () => {
+  const navigate = useNavigate();
+
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useCart();
   const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
   const [radio, setRadio] = useState([]);
@@ -70,7 +76,7 @@ const Home = () => {
     }
   };
 
-  // filter by cat
+  // filter by category
   const handleFilter = (value, id) => {
     let all = [...checked];
     if (value) {
@@ -106,7 +112,7 @@ const Home = () => {
     <Layout title={"ALl Products - Best offers "}>
       <div className="container-fluid row mt-3">
         <div className="col-md-2">
-          <h4 className="text-center">Filter By Category</h4>
+          <h4 className="text-center">Select By Category</h4>
           <div className="d-flex flex-column">
             {categories?.map((c) => (
               <Checkbox
@@ -118,7 +124,7 @@ const Home = () => {
             ))}
           </div>
           {/* price filter */}
-          <h4 className="text-center mt-4">Filter By Price</h4>
+          <h4 className="text-center mt-4">Select By Price</h4>
           <div className="d-flex flex-column">
             <Radio.Group onChange={(e) => setRadio(e.target.value)}>
               {Prices?.map((p) => (
@@ -138,7 +144,7 @@ const Home = () => {
           </div>
         </div>
         <div className="col-md-9">
-          <h1 className="text-center">All Products</h1>
+          <h1 className="text-center">Best Products and Latest Arrival! Shop Now!</h1>
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
               <div className="card m-2" style={{ width: "18rem" }}>
@@ -153,8 +159,10 @@ const Home = () => {
                     {p.description.substring(0, 30)}...
                   </p>
                   <p className="card-text"> $ {p.price}</p>
-                  <button class="btn btn-primary ms-1">More Details</button>
-                  <button class="btn btn-secondary ms-1">ADD TO CART</button>
+                  <button class="btn btn-primary ms-1" onClick={() => navigate(`/product/${p.slug}`)}>More Details</button>
+                  <button class="btn btn-secondary ms-1"onClick={() => {setCart([...cart, p]);localStorage.setItem("cart",JSON.stringify([...cart, p]));
+                    toast.success("Item Added to cart");
+                  }} >ADD TO CART</button>
                 </div>
               </div>
             ))}

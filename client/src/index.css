@@ -88,12 +88,17 @@
 
 /* Login CSS */
 .login{
-  display: flex;
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
   align-items: center;
   justify-content: center;
   height: 70vh;
   flex-direction: column;
+
 }
+
+
 
 /* ==================== */
 .product-link {
@@ -101,3 +106,19 @@
   color: black !important;
 }
 
+/* ========================================= */
+/* =========contact us ========= */
+.contactus {
+  margin: 0;
+  padding: 0;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-dark{
+  background-color: whitesmoke;
+  
+
+}

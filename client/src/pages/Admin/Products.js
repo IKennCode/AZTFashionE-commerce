@@ -29,7 +29,7 @@ const Products = () => {
           <AdminMenu />
         </div>
         <div className="col-md-9 ">
-          <h1 className="text-center">All Products List</h1>
+          <h1 className="text-center"> Products List</h1>
           <div className="d-flex">
             {products?.map((p) => (
               <Link
