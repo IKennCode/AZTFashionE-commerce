@@ -6,14 +6,16 @@ const About = () => {
     
     <Layout title={"About us - Ecommer app"}>
       <div className="row contactus ">
-        <div className="col-md-6 ">
+        <div className="col-md-6 mt-5 ">
           <img
-            src="/image/register.png"
+            src="/image/4.jpg"
             alt="contactus"
             style={{ width: "100%" }}
           />
         </div>
+        
         <div className="col-md-4">
+        <h1>About Us</h1>
           <p className="text-justify mt-2">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
             officiis obcaecati esse tempore unde ratione, eveniet mollitia,

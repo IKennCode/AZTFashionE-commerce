@@ -152,7 +152,7 @@ const CreateProduct = () => {
               <div className="mb-3">
                 <Select
                   bordered={false}
-                  placeholder="Select Shipping "
+                  placeholder="Select Shipping  Option "
                   size="large"
                   showSearch
                   className="form-select mb-3"
@@ -166,7 +166,7 @@ const CreateProduct = () => {
               </div>
               <div className="mb-3">
                 <button className="btn btn-primary" onClick={handleCreate}>
-                  CREATE PRODUCT NOw!
+                  CREATE PRODUCT NOW!
                 </button>
               </div>
             </div>
