@@ -10,6 +10,7 @@ import authRoutes from "./routes/authRoute.js";
 import cors from 'cors';
 import categoryRoutes from "./routes/categoryRoutes.js"
 import productRoutes from "./routes/productRoutes.js";
+import cors from "cors";
 import path from "path";
 
 //configure env
@@ -34,7 +35,7 @@ app.use("/api/v1/product", productRoutes);
 
 //rest api
 app.use("*", function(req, res){
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+    res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
 // declare PORT
