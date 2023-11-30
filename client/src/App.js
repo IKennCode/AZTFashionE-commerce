@@ -30,37 +30,35 @@ function App() {
   return (
     < >
       <Routes>
-      <Route path="/home" element={<Home/>} />
-       <Route path="/search" element={<Search/>} />
-       <Route path="/cart" element={<CartPage/>} />
-       <Route path="/product/:slug" element={<ProductDetails/>}/>
-       <Route path="/categories" element={<Categories/>} />
-      <Route path="/" element={<Home/>} />
-      
-      <Route path="/dashboard" element={< PrivateRoute/>}>
-          <Route path="user" element={<Dashboard />} />
-          <Route path="user/orders" element={<Orders />} />
-          <Route path="user/profile" element={<Profile />} />
-      </Route>
+          <Route path="/home" element={<Home/>} />
+          <Route path="/search" element={<Search/>} />
+          <Route path="/cart" element={<CartPage/>} />
+          <Route path="/product/:slug" element={<ProductDetails/>}/>
+          <Route path="/categories" element={<Categories/>} />
+          
+          
+            <Route path="/dashboard" element={< PrivateRoute/>}>
+                <Route path="user" element={<Dashboard />} />
+                <Route path="user/orders" element={<Orders />} />
+                <Route path="user/profile" element={<Profile />} />
+            </Route>
 
-      <Route path="/dashboard" element={<AdminRoute/>}>
-          <Route path="admin" element={<AdminDashboard/>}/>
-          <Route path="/dashboard/admin/create-category" element={<CreateCategory/>}/>
-          <Route path="/dashboard/admin/create-product" element={<CreateProduct/>}/>
-          <Route path="admin/product/:slug" element={<UpdateProduct/>}/>
-          <Route path="admin/products" element={<Products/>}/>
-
-          <Route path="/dashboard/admin/users" element={<Users/>}/>
-
-      </Route>
-      
-      <Route path="/register" element={<Register />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/about" element={<About/>} />
-      <Route path="/forgot-password" element={<ForgotPassword/>} />
-      <Route path="/contact" element={<Contact/>} />
-      <Route path="/*" element={< Pagenotfound/>} />
-      <Route path="/policy" element={<Policy/>} />
+            <Route path="/dashboard" element={<AdminRoute/>}>
+                <Route path="admin" element={<AdminDashboard/>}/>
+                <Route path="/dashboard/admin/create-category" element={<CreateCategory/>}/>
+                <Route path="/dashboard/admin/create-product" element={<CreateProduct/>}/>
+                <Route path="admin/product/:slug" element={<UpdateProduct/>}/>
+                <Route path="admin/products" element={<Products/>}/>
+                <Route path="/dashboard/admin/users" element={<Users/>}/>
+            </Route>
+          
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/forgot-password" element={<ForgotPassword/>} />
+          <Route path="/contact" element={<Contact/>} />
+          <Route path="/*" element={< Pagenotfound/>} />
+          <Route path="/policy" element={<Policy/>} />
       </Routes>
     </>
   );

@@ -152,7 +152,7 @@ const CreateProduct = () => {
               <div className="mb-3">
                 <Select
                   bordered={false}
-                  placeholder="Select Shipping  Option "
+                  placeholder="New Arrival or Re-post? "
                   size="large"
                   showSearch
                   className="form-select mb-3"
@@ -160,8 +160,8 @@ const CreateProduct = () => {
                     setShipping(value);
                   }}
                 >
-                  <Option value="0">No</Option>
-                  <Option value="1">Yes</Option>
+                  <Option value="0">New Arrival</Option>
+                  <Option value="1">Repost</Option>
                 </Select>
               </div>
               <div className="mb-3">

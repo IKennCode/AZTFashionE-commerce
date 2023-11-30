@@ -8,6 +8,9 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { Checkbox, Radio } from "antd";
 import { Prices } from "../components/Prices";
+
+
+
 const Home = () => {
   const navigate = useNavigate();
 
@@ -36,6 +39,7 @@ const Home = () => {
     getAllCategory();
     getTotal();
   }, []);
+  
   //get products
   const getAllProducts = async () => {
     try {
@@ -63,6 +67,8 @@ const Home = () => {
     if (page === 1) return;
     loadMore();
   }, [page]);
+  
+  
   //load more
   const loadMore = async () => {
     try {
@@ -106,9 +112,10 @@ const Home = () => {
       console.log(error);
     }
   };
-  return (
-    
  
+ 
+  return (
+
     <Layout title={"ALl Products - Best offers "}>
       <div className="container-fluid row mt-3">
         <div className="col-md-2">
@@ -123,7 +130,7 @@ const Home = () => {
               </Checkbox>
             ))}
           </div>
-          {/* price filter */}
+          
           <h4 className="text-center mt-4">Select By Price</h4>
           <div className="d-flex flex-column">
             <Radio.Group onChange={(e) => setRadio(e.target.value)}>

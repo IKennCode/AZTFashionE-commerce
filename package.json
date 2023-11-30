@@ -13,6 +13,7 @@
   "keywords": [],
   "author": "IKennCode",
   "license": "MIT",
+  
   "dependencies": {
     "bcrypt": "^5.1.1",
     "colors": "^1.4.0",

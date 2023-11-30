@@ -5,12 +5,15 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import CategoryForm from "../../components/Form/CategoryForm";
 import { Modal } from "antd";
+
+
 const CreateCategory = () => {
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
   const [visible, setVisible] = useState(false);
   const [selected, setSelected] = useState(null);
   const [updatedName, setUpdatedName] = useState("");
+ 
   //handle Form
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -68,6 +71,8 @@ const CreateCategory = () => {
       toast.error("Something went wrong");
     }
   };
+  
+  
   //delete category
   const handleDelete = async (pId) => {
     try {
@@ -85,6 +90,7 @@ const CreateCategory = () => {
       toast.error("Somtihing went wrong");
     }
   };
+ 
   return (
     <Layout title={"Dashboard - Create Category"}>
       <div className="container-fluid m-3 p-3">
